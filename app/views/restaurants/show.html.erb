@@ -1,0 +1,7 @@
+<h2>
+  <!-- I have access to the @restaurant variable because I established it in my restaurants_controller#show like that -->
+  <%= @restaurant[:name] %>
+</h2>
+
+<p>Cuisine: <strong><%= @restaurant[:category] %></strong></p>
+<p>Address: <strong><%= @restaurant[:address] %></strong></p>

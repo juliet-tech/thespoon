@@ -1,0 +1,17 @@
+<h2>Hello from home page!</h2>
+
+<!-- The important part is that the `params` hash will get generated with a key `food_type` and a value with whatever text the user inputs. -->
+<form action="/restaurants" method="get">
+  <input type="text" name="food_type" placeholder="What kind of food?">
+  <input type="submit">
+</form>
+
+<!-- This form goes to the `restaurants#create` method in our restaurants_controller as established in the routes with the `post method`. -->
+<!-- Here we are using post because we want to use that information we are getting from the user to create a new instance of a restaurant with that specific input. -->
+<form action="/restaurants" method="post">
+  <!-- The authencity_token prevents us from encountering XSRF forgery attacks. If you're interested in what this is in more depth: https://stackoverflow.com/questions/941594/understanding-the-rails-authenticity-token -->
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" name="name" placeholder="Name">
+  <input type="text" name="address" placeholder="Address">
+  <input type="submit">
+</form>

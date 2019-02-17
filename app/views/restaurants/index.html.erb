@@ -1,0 +1,10 @@
+<ul>
+<% @restaurants.each do |id, restaurant| %>
+  <li>
+    <!-- link_to what_you_want_to_see, where_you_want_to_go -->
+    <!-- We pass it the id next to the path_name because in our routes we have it as a dynamic element. If we don't pass it anything, we won't know which specific restaurant to go to and the url won't be able to get generated properly. -->
+    <%= link_to restaurant[:name], restaurant_path(id) %>
+    <p>(<%= restaurant[:address] %>)</p>
+  </li>
+<% end %>
+</ul>
